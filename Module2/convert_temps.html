@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Convert from Fahrenheit to Centigrade</title>
+    <script>
+      // intiating variables
+      var fahrenheit, centigrade;
+      // prompting user for temp in fahrenheit
+      fahrenheit = prompt("Enter the temperature in Fahrenheit");
+      // parsing string to int
+      fahrenheit = parseInt(fahrenheit);
+      // converting to centigrade
+      centigrade = (fahrenheit - 32) * (5 / 9);
+      // output result to second window
+      // I formatted this way as it's what Google's JS style guide recommended
+      window.alert(
+        "The temperature in Farenheit is " +
+          fahrenheit +
+          "\n" +
+          "The temperature in Centigrade is " +
+          centigrade
+      );
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Thanks for using the temperature converter</h1>
+    </main>
+  </body>
+</html>
