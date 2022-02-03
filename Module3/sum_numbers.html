@@ -13,17 +13,16 @@
         do {
           let userNum = prompt("Enter a number between 1 and 100:");
           // testing if the user entered a number between one and 100
-          if (userNum == isNaN || userNum < 1 || userNum > 100) {
+          if (isNaN(userNum) || userNum < 1 || userNum > 100) {
             alert(
               "The value entered is not a number between 1 and 100. Please try again."
             );
-            continue;
           } else {
             userNum = int(userNum);
           }
         } while (
           // while portion to test if input is correct
-          userNum == isNaN ||
+          isNaN(userNum) ||
           userNum < 1 ||
           userNum > 100
         );
@@ -31,7 +30,7 @@
         // variable for the sum
         let sum = 0;
         // for loop to add up the numbers between 1 and the user number
-        for (let i = 0; i >= userNum; i++) {
+        for (let i = 1; i >= userNum; i++) {
           sum += i;
         }
 
