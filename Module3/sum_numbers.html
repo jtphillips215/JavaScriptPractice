@@ -6,40 +6,41 @@
     <script>
       // variable to store whether the user wants to continue or not
       let userContinue;
+      let userNum;
 
       // outer do while
       do {
         // inner do while
         do {
-          let userNum = prompt("Enter a number between 1 and 100:");
+          userNum = prompt("Enter a number between 1 and 100:");
           // testing if the user entered a number between one and 100
-          if (isNaN(userNum) || userNum < 1 || userNum > 100) {
+          userNum = parseInt(userNum);
+          if (isNaN(userNum) || userNum <= 1 || userNum >= 100) {
             alert(
               "The value entered is not a number between 1 and 100. Please try again."
             );
-          } else {
-            userNum = int(userNum);
+            continue;
           }
         } while (
           // while portion to test if input is correct
           isNaN(userNum) ||
-          userNum < 1 ||
-          userNum > 100
+          userNum <= 1 ||
+          userNum >= 100
         );
 
         // variable for the sum
         let sum = 0;
         // for loop to add up the numbers between 1 and the user number
-        for (let i = 1; i >= userNum; i++) {
+        for (let i = 1; i <= userNum; i++) {
           sum += i;
         }
 
         // alert with the sum
-        alert("The sum is {}", sum);
+        alert(`The sum of numbers between 1 and ${userNum} is ${sum}.`);
 
         // prompt to continue
-        userContinue = prompt("Do you want to continue?");
-      } while (userContinue == "y");
+        userContinue = prompt("Do another sum?");
+      } while (userContinue === "y");
       // outer do while test for continuing
     </script>
   </head>
