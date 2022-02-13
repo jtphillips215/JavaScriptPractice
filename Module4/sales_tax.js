@@ -7,11 +7,21 @@ const $ = selector => document.querySelector(selector);
 const processEntries = () => {
   let subtotal = parseFloat($("#subtotal").value);
   let taxRate = parseFloat($("#tax_rate").value);
-  let salesTax = subtotal * (taxRate / 100);
-  $("#sales_tax").value = salesTax.toFixed(2);
-  let total = subtotal + salesTax;
-  $("#total").value = total.toFixed(2);
-  subtotalFocus();
+  
+  // data validation for the processEntries() function
+  if(isNaN(subtotal) || subtotal < 0 || subtotal > 10000) {
+    alert("Subtotal must be > 0 and < 10000");
+  }
+  else if(isNaN(taxRate) || taxRate < 0 || taxRate > 12) {
+    alert("Tax Rate must be > 0 and < 12");
+  }
+  else {
+    let salesTax = subtotal * (taxRate / 100);
+    $("#sales_tax").value = salesTax.toFixed(2);
+    let total = subtotal + salesTax;
+    $("#total").value = total.toFixed(2);
+    subtotalFocus();
+  }
 }
 
 // function for focusing on subtotal for page start and on clicking calculate
@@ -39,9 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 calculate.addEventListener("click", processEntries);
 });
 
-// data validation for the processEntries() function
-// Subtotal must be > 0 and < 10000
-// Tax Rate must be > 0 and < 12
+
 
 // event handler for the click event of subtotal text bock clear the data from the text box
 $("#subtotal").addEventListener("click", () => {
