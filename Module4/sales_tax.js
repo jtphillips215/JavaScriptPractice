@@ -5,11 +5,12 @@ const $ = selector => document.querySelector(selector);
 // process entries gets the user entries, calculates the sales tax and total,
 // and displays those results
 const processEntries = () => {
-  let subtotal = parseFloat(textbox.$("#subtotal")).value;
-  let taxRate = parseFloat(textbox.$("#tax_rate")).value;
+  let subtotal = parseFloat($("#subtotal")).value;
+  let taxRate = parseFloat($("#tax_rate")).value;
   let salesTax = subtotal * taxRate;
+  $("#sales_tax").value = salesTax.toFixed(2);
   let total = subtotal + salesTax;
-  alert(total);
+  $("#total").value = total.toFixed(2);
   subtotalFocus();
 }
 
