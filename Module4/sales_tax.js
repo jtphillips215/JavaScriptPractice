@@ -13,7 +13,18 @@ const processEntries = function() {
 }
 
 // focusing on subtotal for page start and on clicking calculate
-document.querySelector("#subTotal").focus();
+const subtotalFocus = function() {
+  document.querySelector("#subTotal").focus();
+}
+
+// function for clearing form to be attached to event handlers
+const clearForm = function() {
+  $("#subtotal").value = "";
+  $("#tax_rate").value = "";
+  $("#sales_tax").value = "";
+  $("#total").value = "";
+  subtotalFocus();
+}
 
 // DOMContentLoaded event handler for attaching the processEntries() function
 // to the click event of the Calculate button
