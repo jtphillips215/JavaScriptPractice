@@ -29,7 +29,8 @@ const clearForm = function() {
 
 // DOMContentLoaded event handler for attaching the processEntries() function
 // to the click event of the Calculate button
-$("#calculate").addEventListener("click", processEntries);
+let calculate = $("#calculate");
+calculate.addEventListener("click", processEntries);
 
 // data validation for the processEntries() function
 // Subtotal must be > 0 and < 10000
@@ -39,4 +40,5 @@ $("#calculate").addEventListener("click", processEntries);
 
 // event handler for the click event of tax rate text bock clear the data from the text box
 
-// Update the event handler for the Clear button to call these functions as well (to reduce code duplication)
+// Update the event handler for the Clear button to call these functions as well
+// (to reduce code duplication)
