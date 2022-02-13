@@ -42,3 +42,5 @@ calculate.addEventListener("click", processEntries);
 
 // Update the event handler for the Clear button to call these functions as well
 // (to reduce code duplication)
+let clear = $("#clear");
+clear.addEventListener("click", clearForm);
