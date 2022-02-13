@@ -4,11 +4,12 @@ const $ = selector => document.querySelector(selector);
 
 // process entries gets the user entries, calculates the sales tax and total,
 // and displays those results
-function processEntries() {
-  let subtotal = textbox.$("#subtotal").value;
-  let taxRate = textbox.$("#tax_rate").value;
+const processEntries = function() {
+  let subtotal = parseFloat(textbox.$("#subtotal")).value;
+  let taxRate = parseFloat(textbox.$("#tax_rate")).value;
   let salesTax = subtotal * taxRate;
   let total = subtotal + salesTax;
+  alert(total);
 }
 
 // focusing on subtotal for page start and on clicking calculate
