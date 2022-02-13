@@ -5,9 +5,9 @@ const $ = selector => document.querySelector(selector);
 // process entries gets the user entries, calculates the sales tax and total,
 // and displays those results
 const processEntries = () => {
-  let subtotal = parseFloat($("#subtotal")).value;
-  let taxRate = parseFloat($("#tax_rate")).value;
-  let salesTax = subtotal * taxRate;
+  let subtotal = parseFloat($("#subtotal").value);
+  let taxRate = parseFloat($("#tax_rate").value);
+  let salesTax = subtotal * (taxRate / 100);
   $("#sales_tax").value = salesTax.toFixed(2);
   let total = subtotal + salesTax;
   $("#total").value = total.toFixed(2);
