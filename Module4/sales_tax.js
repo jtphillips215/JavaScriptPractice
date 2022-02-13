@@ -38,8 +38,12 @@ calculate.addEventListener("click", processEntries);
 // Tax Rate must be > 0 and < 12
 
 // event handler for the click event of subtotal text bock clear the data from the text box
+let clearSubtotal = $("subtotal");
+clearSubtotal.addEventListener("click", $("#subtotal").value = "");
 
 // event handler for the click event of tax rate text bock clear the data from the text box
+let clearTaxRate = $("subtotal");
+clearTaxRate.addEventListener("click", $("#tax_rate").value = "");
 
 // Update the event handler for the Clear button to call these functions as well
 // (to reduce code duplication)
