@@ -14,9 +14,13 @@ const processEntries = () => {
   subtotalFocus();
 }
 
-// focusing on subtotal for page start and on clicking calculate
+// function for focusing on subtotal for page start and on clicking calculate
 const subtotalFocus = () => {
   document.querySelector("#subTotal").focus();
+}
+
+window.onload = () => {
+  subtotalFocus();
 }
 
 // function for clearing form to be attached to event handlers
