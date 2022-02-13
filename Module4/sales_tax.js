@@ -4,7 +4,7 @@ const $ = selector => document.querySelector(selector);
 
 // process entries gets the user entries, calculates the sales tax and total,
 // and displays those results
-const processEntries = function() {
+const processEntries = () => {
   let subtotal = parseFloat(textbox.$("#subtotal")).value;
   let taxRate = parseFloat(textbox.$("#tax_rate")).value;
   let salesTax = subtotal * taxRate;
@@ -14,12 +14,12 @@ const processEntries = function() {
 }
 
 // focusing on subtotal for page start and on clicking calculate
-const subtotalFocus = function() {
+const subtotalFocus = () => {
   document.querySelector("#subTotal").focus();
 }
 
 // function for clearing form to be attached to event handlers
-const clearForm = function() {
+const clearForm = () => {
   $("#subtotal").value = "";
   $("#tax_rate").value = "";
   $("#sales_tax").value = "";
@@ -36,7 +36,7 @@ calculate.addEventListener("click", processEntries);
 // Subtotal must be > 0 and < 10000
 // Tax Rate must be > 0 and < 12
 
-// event handler for the click event of Subtotal text bock clear the data from the text box
+// event handler for the click event of subtotal text bock clear the data from the text box
 
 // event handler for the click event of tax rate text bock clear the data from the text box
 
