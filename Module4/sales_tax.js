@@ -10,6 +10,7 @@ const processEntries = function() {
   let salesTax = subtotal * taxRate;
   let total = subtotal + salesTax;
   alert(total);
+  subtotalFocus();
 }
 
 // focusing on subtotal for page start and on clicking calculate
