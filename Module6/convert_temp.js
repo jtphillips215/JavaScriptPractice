@@ -21,8 +21,8 @@ const toFahrenheit = () => {
     let degrees_computed = $(degree_label_2);
 
     // changing labels to the correct text
-    degrees_entered.value = "Enter C Degrees";
-    degrees_computed.value = "Degrees Fahrenheit";
+    degrees_entered.innerHTML = "Enter C Degrees";
+    degrees_computed.innerHTML = "Degrees Fahrenheit";
 
     // calling function to clear textboxes
     clearTextBoxes();
@@ -35,8 +35,8 @@ const toCelsius = () => {
     let degrees_computed = $(degree_label_2);
 
     // changing labels to the correct text
-    degrees_entered.value = "Enter F Degrees";
-    degrees_computed.value = "Degrees Calsius";
+    degrees_entered.innerHTML = "Enter F Degrees";
+    degrees_computed.innerHTML = "Degrees Calsius";
 
     // calling function to clear text boxes
     clearTextBoxes();
