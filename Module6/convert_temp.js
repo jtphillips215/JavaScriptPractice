@@ -16,11 +16,16 @@ window.onload = function() {
 
 // to fahrenheit function modifies UI when user clicks the to Fahrenheit radio button
 const to_fahrenheit = () => {
-
+    // assigning html labels to js variables
+    let degrees_entered = $(degree_label_1);
+    let degrees_computed = $(degree_label_2);
 }
 
 // to celsius function modifies UI when user clicks the to Celsius radio button
 const to_celsius = () => {
+    // assigning html labels to js variables
+    let degrees_entered = $(degree_label_1);
+    let degrees_computed = $(degree_label_2);
 
 }
 
