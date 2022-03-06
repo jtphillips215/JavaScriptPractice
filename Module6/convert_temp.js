@@ -51,21 +51,28 @@ const toCelsius = () => {
 // convertTemp takes the temperature and converts it to the output depending on
 // which radio button is clicked
 const convertTemp = () => {
-    if ($("to_celsius").checked) {
-        // accessing number entered and converting to celsius
-        let num_degrees_entered = parseFloat($("degrees_entered").value);
-        let num_degrees_computed = (num_degrees_entered - 32) * (5/9);
-
-        // updating textbox for degrees computed
-        $("degrees_computed").value = num_degrees_computed;
+    // testing if user entered a number an alerting user if not
+    // added if the field was blank after testing
+    if (isNaN($("degrees_entered").value) || $("degrees_entered").value == "") {
+        window.alert("You must enter a valid number for degrees.")
     }
     else {
-        // accessing number entered and converting to fahrenheit
-        let num_degrees_entered = parseFloat($("degrees_entered").value);
-        let num_degrees_computed = num_degrees_entered * (9/5) + 32;
+        if ($("to_celsius").checked) {
+            // accessing number entered and converting to celsius
+            let num_degrees_entered = parseFloat($("degrees_entered").value);
+            let num_degrees_computed = (num_degrees_entered - 32) * (5/9);
 
-        // updating textbox for degrees computed
-        $("degrees_computed").value = num_degrees_computed;
+            // updating textbox for degrees computed
+            $("degrees_computed").value = num_degrees_computed;
+        }
+        else {
+            // accessing number entered and converting to fahrenheit
+            let num_degrees_entered = parseFloat($("degrees_entered").value);
+            let num_degrees_computed = num_degrees_entered * (9/5) + 32;
+
+            // updating textbox for degrees computed
+            $("degrees_computed").value = num_degrees_computed;
+        }
     }
 
 }
