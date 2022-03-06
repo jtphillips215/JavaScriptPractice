@@ -26,6 +26,9 @@ const toFahrenheit = () => {
 
     // calling function to clear textboxes
     clearTextBoxes();
+
+    // focusing on text box to enter value to be converted to improve ux
+    $("degrees_entered").focus();
 }
 
 // to celsius function modifies UI when user clicks the to Celsius radio button
@@ -40,6 +43,9 @@ const toCelsius = () => {
 
     // calling function to clear text boxes
     clearTextBoxes();
+
+    // focusing on textbox to enter value to be converted to improve ux
+    $("degrees_entered").focus();
 }
 
 // convertTemp takes the temperature and converts it to the output depending on
