@@ -17,12 +17,12 @@ window.onload = function() {
 // to fahrenheit function modifies UI when user clicks the to Fahrenheit radio button
 const toFahrenheit = () => {
     // assigning html labels to js variables
-    let degrees_entered = $(degree_label_1);
-    let degrees_computed = $(degree_label_2);
+    let lbl_degrees_entered = $("degree_label_1");
+    let lbl_degrees_computed = $("degree_label_2");
 
     // changing labels to the correct text
-    degrees_entered.innerHTML = "Enter C Degrees";
-    degrees_computed.innerHTML = "Degrees Fahrenheit";
+    lbl_degrees_entered.innerHTML = "Enter C Degrees";
+    lbl_degrees_computed.innerHTML = "Degrees Fahrenheit";
 
     // calling function to clear textboxes
     clearTextBoxes();
@@ -31,12 +31,12 @@ const toFahrenheit = () => {
 // to celsius function modifies UI when user clicks the to Celsius radio button
 const toCelsius = () => {
     // assigning html labels to js variables
-    let degrees_entered = $(degree_label_1);
-    let degrees_computed = $(degree_label_2);
+    let lbl_degrees_entered = $("degree_label_1");
+    let lbl_degrees_computed = $("degree_label_2");
 
     // changing labels to the correct text
-    degrees_entered.innerHTML = "Enter F Degrees";
-    degrees_computed.innerHTML = "Degrees Calsius";
+    lbl_degrees_entered.innerHTML = "Enter F Degrees";
+    lbl_degrees_computed.innerHTML = "Degrees Calsius";
 
     // calling function to clear text boxes
     clearTextBoxes();
