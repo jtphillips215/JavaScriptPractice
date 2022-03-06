@@ -74,5 +74,7 @@ const convertTemp = () => {
             $("degrees_computed").value = num_degrees_computed;
         }
     }
-
+    
+    // focusing on textbox to enter value to be converted to improve ux
+    $("degrees_entered").focus();
 }
