@@ -28,5 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // new time every second. Don't store timer object because it 
     // won't be needed - clock will just run.
 
+    // calling function to display date time on page load
     displayCurrentTime();
+
+    // set interval so that the timer updates every second
+    setInterval(displayCurrentTime, 1000);
+    
 });
