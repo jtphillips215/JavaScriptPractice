@@ -15,6 +15,12 @@ const displayCurrentTime = () => {
     const currentSeconds = currentDate.getSeconds();
     const ampm = "AM";
 
+    // logic for if else to determine AM/PM
+
+    // pad single digit to fix minutes and seconds
+    currentMinutes = padSingleDigit(currentMinutes);
+    currentSeconds = padSingleDigit(currentSeconds);
+
     // updating UI using $ function and selectors
     $("#hours").firstChild.nodeValue = currentHours;
     $("#minutes").firstChild.nodeValue = currentMinutes;
@@ -33,5 +39,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // set interval so that the timer updates every second
     setInterval(displayCurrentTime, 1000);
-    
+
 });
