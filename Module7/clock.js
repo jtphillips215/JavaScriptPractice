@@ -13,16 +13,24 @@ const displayCurrentTime = () => {
     const currentHours = currentDate.getHours();
     const currentMinutes = currentDate.getMinutes();
     const currentSeconds = currentDate.getSeconds();
-    const ampm = "AM";
+    let fixedHours;
+    let ampm = "AM";
 
     // logic for if else to determine AM/PM
+    if (currentHours > 12) {
+        fixedHours = (currentHours - 12);
+        ampm = "PM";
+    }
+    else {
+        fixedHours = currentHours;
+    }
 
     // pad single digit to fix minutes and seconds
     const paddedMinutes = padSingleDigit(currentMinutes);
     const paddedSeconds = padSingleDigit(currentSeconds);
 
     // updating UI using $ function and selectors
-    $("#hours").firstChild.nodeValue = currentHours;
+    $("#hours").firstChild.nodeValue = fixedHours;
     $("#minutes").firstChild.nodeValue = paddedMinutes;
     $("#seconds").firstChild.nodeValue = paddedSeconds;
     $("#ampm").firstChild.nodeValue = ampm; 
