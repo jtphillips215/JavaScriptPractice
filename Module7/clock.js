@@ -17,9 +17,13 @@ const displayCurrentTime = () => {
     let ampm = "AM";
 
     // logic for if else to determine AM/PM
+    // if greater than 12, convert to PM, if 0 make 12 AM, else just use the hours
     if (currentHours > 12) {
         fixedHours = (currentHours - 12);
         ampm = "PM";
+    }
+    else if (currentHours == 0) {
+        fixedHours = 12;
     }
     else {
         fixedHours = currentHours;
