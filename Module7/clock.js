@@ -15,7 +15,11 @@ const displayCurrentTime = () => {
     const currentSeconds = currentDate.getSeconds();
     const ampm = "AM";
 
-
+    // updating UI using $ function and selectors
+    $("#hours").firstChild.nodeValue = currentHours;
+    $("#minutes").firstChild.nodeValue = currentMinutes;
+    $("#seconds").firstChild.nodeValue = currentSeconds;
+    $("#ampm").firstChild.nodeValue = ampm; 
 
 };
 
@@ -23,4 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	// set initial clock display and then set interval timer to display
     // new time every second. Don't store timer object because it 
     // won't be needed - clock will just run.
+
+    displayCurrentTime();
 });
