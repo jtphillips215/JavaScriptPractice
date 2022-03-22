@@ -18,13 +18,13 @@ const displayCurrentTime = () => {
     // logic for if else to determine AM/PM
 
     // pad single digit to fix minutes and seconds
-    currentMinutes = padSingleDigit(currentMinutes);
-    currentSeconds = padSingleDigit(currentSeconds);
+    const paddedMinutes = padSingleDigit(currentMinutes);
+    const paddedSeconds = padSingleDigit(currentSeconds);
 
     // updating UI using $ function and selectors
     $("#hours").firstChild.nodeValue = currentHours;
-    $("#minutes").firstChild.nodeValue = currentMinutes;
-    $("#seconds").firstChild.nodeValue = currentSeconds;
+    $("#minutes").firstChild.nodeValue = paddedMinutes;
+    $("#seconds").firstChild.nodeValue = paddedSeconds;
     $("#ampm").firstChild.nodeValue = ampm; 
 
 };
