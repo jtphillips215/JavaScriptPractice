@@ -1,8 +1,10 @@
 "use strict";
-$(document).ready(function() 
-{
+$(document).ready(function() {
+
   // attaching second function for the click event of the a tags/links
   $("#jdom a").click( evt => {
-    //code goes here
-} 
-}
+    
+    // current target determines which like is clicked
+    const clickedLink = evt.currentTarget;
+  }); 
+});
