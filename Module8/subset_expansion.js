@@ -1,4 +1,8 @@
+"use strict";
 $(document).ready(function() 
 {
-  // code goes here
+  // attaching second function for the click event of the a tags/links
+  $("#jdom a").click( evt => {
+    //code goes here
+} 
 }
