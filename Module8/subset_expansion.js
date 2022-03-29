@@ -12,6 +12,7 @@ $(document).ready(function() {
     // show or hide selected div 
     if ($(currentLink).prev().attr("class") !== "hide") {
       $(currentLink).prev().hide();
+      $(currentLink).text("Show more")
     } 
     else { $(currentLink).prev().show();
       $(currentLink).text("Show less")
