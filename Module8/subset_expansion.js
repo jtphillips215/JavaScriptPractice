@@ -6,14 +6,16 @@ $(document).ready(function() {
     // current target determines which like is clicked
     const currentLink = evt.currentTarget;
     
-    // toggle minus class for a tag 
-    $(currentLink).toggleClass("hide");
+    // toggle minus class for previous dov
+    $(currentLink).prev().toggleClass("hide");
     
-    // show or hide related div 
-    if ($(currentLink).prev().attr("class") != "hide") {
+    // show or hide selected div 
+    if ($(currentLink).prev().attr("class") !== "hide") {
       $(currentLink).prev().hide();
     } 
-    else { $(currentLink).prev().show(); }
+    else { $(currentLink).prev().show();
+      $(currentLink).text("Show less")
+    }
     
     // preventiong default behavior for link
     evt.preventDefault();
