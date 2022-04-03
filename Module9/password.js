@@ -13,6 +13,15 @@ const getRandomNumber = max => {
 $(document).ready( () => {
     $("#generate").click( () => {
         $("#password").val( "" ); // clear previous entry
+
+        // getting value from the number blank
+        let numCharacters = $("#num").val();
+
+        // testing if blank contains numbers
+        // displaying alert if nun-numeric characters detected
+        if (isNaN(numCharacters)) {
+            alert("Please enter a number!");
+        }
     
         const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+!@";
         
