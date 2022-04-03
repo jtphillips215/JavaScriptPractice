@@ -21,8 +21,8 @@ $(document).ready( () => {
 
         // testing if blank contains numbers
         // displaying alert if nun-numeric characters detected
-        if (isNaN(numCharacters)) {
-            alert("Please enter a number!");
+        if (isNaN(numCharacters) || numCharacters == "") {
+            alert("Please enter a valid number.");
         }
 
         // converting user input to int from string
