@@ -39,6 +39,9 @@ $(document).ready( () => {
         // displaying generated password to user
         $("#password").val(userPassword);
 
+        // setting password blank to focus so user can copy/paste
+        $("#password").focus();
+
     }); // end click()
     
     $("#clear").click( () => {
