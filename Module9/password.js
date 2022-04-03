@@ -13,7 +13,9 @@ const getRandomNumber = max => {
 $(document).ready( () => {
     $("#generate").click( () => {
         $("#password").val( "" ); // clear previous entry
-
+    
+        const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+!@";
+        
         // getting value from the number blank
         let numCharacters = $("#num").val();
 
@@ -22,9 +24,18 @@ $(document).ready( () => {
         if (isNaN(numCharacters)) {
             alert("Please enter a number!");
         }
-    
-        const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+!@";
-        
+
+        // variable to hold our password
+        let userPassword = "";
+
+        // for loop to add to password
+        for (i = 0; i < numCharacters; i++) {
+            userPassword += chars.charAt(getRandomNumber(chars));
+        }
+
+        // displaying generated password to user
+        $("#password").val(userPassword);
+
     }); // end click()
     
     $("#clear").click( () => {
