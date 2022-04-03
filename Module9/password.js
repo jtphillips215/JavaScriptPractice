@@ -25,12 +25,15 @@ $(document).ready( () => {
             alert("Please enter a number!");
         }
 
+        // converting user input to int from string
+        numCharacters = parseInt(numCharacters);
+
         // variable to hold our password
         let userPassword = "";
 
         // for loop to add to password
-        for (i = 0; i < numCharacters; i++) {
-            userPassword += chars.charAt(getRandomNumber(chars));
+        for (let i = 0; i < numCharacters; i++) {
+            userPassword += chars.charAt(getRandomNumber(chars.length));
         }
 
         // displaying generated password to user
