@@ -10,7 +10,9 @@ $(document).ready( () => {
         // optional prefic for 1
         // const pattern = /^(\d{1}-)?\d{3}-\d{3}-\d{4}$/;    //1-555-555-5555 or 555-555-5555
         // dashes or dots
-        const pattern = /^(\d{1}(-|\.))?\d{3}(-|\.)\d{3}(-|\.)\d{4}$/;    // above or 9.555.555.5555
+        // const pattern = /^(\d{1}(-|\.))?\d{3}(-|\.)\d{3}(-|\.)\d{4}$/;    // above or 9.555.555.5555
+        // optional parenthesis
+        const pattern = /^(\d{1}(-|\.))?(\(\d{3}\)|\d{3})(-|\.)\d{3}(-|\.)\d{4}$/;
         const isValid = pattern.test(phone);
 
         $("#message").text( (isValid) ? "Valid phone number" : "Invalid phone number" );
