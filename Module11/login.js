@@ -1,7 +1,22 @@
 "use strict";
 
 const getCookieByName = name => {
-    return "";
+    const cookies = document.cookie;
+    let start = cookies.indexOf(name + "=");
+    // no cookie found with name
+    if (start === -1) {
+        return "";
+    }
+    else {
+        start = start + (name.length + 1);
+        let end = cookies.indexOf(";", start);
+        if (end === -1) { 
+            // no semicolon found means last name value pair
+            end = cookies.length;
+        }
+        const cookieValue = cookies.substring(start, end);
+        return decodeURIComponent(cookieValue);
+    }
 };
 
 const setCookie = (name, value, days) => {
@@ -15,7 +30,7 @@ const setCookie = (name, value, days) => {
     // setting cookie in doc
     document.cookie = cookie;
     // testing our cookie
-    document.write(cookie);
+    // document.write(cookie);
 };
 
 const deleteCookie = name => {
@@ -24,5 +39,5 @@ const deleteCookie = name => {
 };
 
 const goToPage = url => {
-
+    location.href = url;
 };
