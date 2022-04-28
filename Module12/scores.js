@@ -1,5 +1,9 @@
 "use strict";
 
+// adding arrays for score values and strings
+const scores = new Array();
+const scoresString = new Array();
+
 const displayScores = (scores, scoresString) => {
 	
 };
