@@ -18,8 +18,16 @@ const displayScores = (scores, scoresString) => {
 
     // calculating average and updating blank
     let average = total / scores.length;
-    console.log(average);
+    //console.log(average);
     $("#average_score").text(average);
+
+    let scoresText = "";
+    // updating text area with scores from scorestring array
+    for (let i = 0; i <  scoresString.length; i++) {
+        console.log(scoresString[i]);
+        scoresText += scoresString[i] + "\n";
+    }
+    $("#scores").text(scoresText);
 }
 
 $(document).ready( () => {
@@ -33,8 +41,7 @@ $(document).ready( () => {
         let lastName = $("#last_name").val();
         let firstName = $("#first_name").val();
         scoresString[scoresString.length] = lastName + ", " + firstName + ": " + score;
-        console.log(scoresString);
-
+        //console.log(scoresString);
 
         // calling display scores to update with the required information
         displayScores(scores, scoresString);
@@ -49,11 +56,12 @@ $(document).ready( () => {
     $("#clear_button").click( () => {
 
         // emptying arrays
-        scores = [];
-        scoresString = [];
+        scores.length = 0;
+        scoresString.length = 0;
+        
 
         // remove the score data from the web page
-        $("#average_score").val( "" );
+        $("#average_score").text( "" );
         $("#scores").val( "" );
 
         $("#first_name").focus();
