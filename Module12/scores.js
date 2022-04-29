@@ -28,6 +28,14 @@ $(document).ready( () => {
         let score = $("#score").val();
         //console.log(score);
         scores[scores.length] = score;
+
+        // adding name and score to the scorestring array
+        let lastName = $("#last_name").val();
+        let firstName = $("#first_name").val();
+        scoresString[scoresString.length] = lastName + ", " + firstName + ": " + score;
+        console.log(scoresString);
+
+
         // calling display scores to update with the required information
         displayScores(scores, scoresString);
         
@@ -40,6 +48,9 @@ $(document).ready( () => {
     
     $("#clear_button").click( () => {
 
+        // emptying arrays
+        scores = [];
+        scoresString = [];
 
         // remove the score data from the web page
         $("#average_score").val( "" );
