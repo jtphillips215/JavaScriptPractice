@@ -21,10 +21,10 @@ const displayScores = (scores, scoresString) => {
     //console.log(average);
     $("#average_score").text(average);
 
-    let scoresText = "";
     // updating text area with scores from scorestring array
+    let scoresText = "";
     for (let i = 0; i <  scoresString.length; i++) {
-        console.log(scoresString[i]);
+        //console.log(scoresString[i]);
         scoresText += scoresString[i] + "\n";
     }
     $("#scores").text(scoresText);
@@ -59,7 +59,6 @@ $(document).ready( () => {
         scores.length = 0;
         scoresString.length = 0;
         
-
         // remove the score data from the web page
         $("#average_score").text( "" );
         $("#scores").val( "" );
@@ -68,7 +67,9 @@ $(document).ready( () => {
     }); // end click()
        
     $("#sort_button").click( () => {
-
+        // sorting array, clearing fields, populating with current data
+        scoresString.sort();
+        displayScores(scores, scoresString);
     }); // end click()
     
     $("#first_name").focus();
