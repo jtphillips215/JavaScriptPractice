@@ -6,12 +6,12 @@ const scoresString = new Array();
 
 const displayScores = (scores, scoresString) => {
     //console.log(scores);
-    
+
     // total that can be added to as we iterate through array
     let total = 0;
     // iterating through array and adding to total 
-	for (let i = 0; i < scores.length; i++) {
-        let score = parseInt(scores[i]); 
+    for (let i = 0; i < scores.length; i++) {
+        let score = parseInt(scores[i]);
         total += score;
         //console.log(total);
     }
@@ -23,15 +23,15 @@ const displayScores = (scores, scoresString) => {
 
     // updating text area with scores from scorestring array
     let scoresText = "";
-    for (let i = 0; i <  scoresString.length; i++) {
+    for (let i = 0; i < scoresString.length; i++) {
         //console.log(scoresString[i]);
         scoresText += scoresString[i] + "\n";
     }
     $("#scores").text(scoresText);
 }
 
-$(document).ready( () => {
-    $("#add_button").click( () => {
+$(document).ready(() => {
+    $("#add_button").click(() => {
         // adding our score to the scores array
         let score = $("#score").val();
         //console.log(score);
@@ -45,32 +45,32 @@ $(document).ready( () => {
 
         // calling display scores to update with the required information
         displayScores(scores, scoresString);
-        
+
         // get the add form ready for next entry
-        $("#first_name").val( "" );
-        $("#last_name").val( "" );
-        $("#score").val( "" );
+        $("#first_name").val("");
+        $("#last_name").val("");
+        $("#score").val("");
         $("#first_name").focus();
     }); // end click()
-    
-    $("#clear_button").click( () => {
+
+    $("#clear_button").click(() => {
 
         // emptying arrays
         scores.length = 0;
         scoresString.length = 0;
-        
+
         // remove the score data from the web page
-        $("#average_score").text( "" );
-        $("#scores").val( "" );
+        $("#average_score").text("");
+        $("#scores").val("");
 
         $("#first_name").focus();
     }); // end click()
-       
-    $("#sort_button").click( () => {
+
+    $("#sort_button").click(() => {
         // sorting array, clearing fields, populating with current data
         scoresString.sort();
         displayScores(scores, scoresString);
     }); // end click()
-    
+
     $("#first_name").focus();
 }); // end ready()
